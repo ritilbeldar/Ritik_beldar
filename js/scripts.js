@@ -92,3 +92,17 @@ $(function () {
         }
       });
   });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const downloadButton = document.getElementById("downloadButton");
+    const cvFileName = "./images/Ritik Beldar CV.pdf"; // Corrected file path
+    
+    downloadButton.addEventListener("click", function() {
+        const link = document.createElement("a");
+        link.href = cvFileName;
+        link.download = "Ritik Beldar CV.pdf";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    });
+});
